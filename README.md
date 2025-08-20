@@ -43,4 +43,54 @@ The Airbnb Clone Project is structured to be developed by people with distinct r
     •	DevOps Engineer: Facilitated collaboration between development and operations teams, building CI/CD pipelines using GitHub Actions and Docker. The DevOps engineer e    nsured fast, stable, and automated deployments while maintaining application stability.
 
 
+                                Database Design
+
+Entities and Fields
+•	Users
+    o	id: Unique identifier for each user (Primary Key).
+
+    o	email: User’s email address for authentication and communication.
+
+    o	password: Securely hashed password for user authentication.
+
+    o	name: User’s full name for profile display.
+
+    o	role: User role (e.g, guest, host) to determine permissions.
+
+•	Properties
+    o	id: Unique identifier for each property (Primary Key).
+    o	title: Descriptive title of the property.
+    o	description: Detailed description of the property’s features.
+    o	location: Address of the property.
+    o	price: Cost of renting the property.
+•	Bookings
+    o	id: Unique identifier for each booking (Primary Key).
+    o	user_id: Reference to the user making the booking (Foreign Key).
+    o	property_id: Reference to the booked property (Foreign Key).
+    o	start_date: Start date of the booking.
+    o	end_date: End date of the booking.
+•	Reviews
+    o	id: Unique identifier for each review (Primary Key).
+    o	user_id: Reference to the user who wrote the review (Foreign Key).
+    o	property_id: Reference to the reviewed property (Foreign Key).
+    o	rating: Numerical rating of a property and services rended by a property owner to a customer.
+    o	comment: Textual feedback about the stay.
+•	Payments
+    o	id: Unique identifier for each payment (Primary Key).
+    o	booking_id: Reference to the associated booking (Foreign Key).
+    o	amount: Total payment amount.
+    o	payment_status: Status of the payment (e.g., pending, completed, failed).
+    o	payment_date: Date and time the payment was processed.
+Entity Relationships
+    •	Users and Properties: A user can own multiple properties (as a host), and one user owns each property. This is a one-to-many relationship (one user to many 
+    properties).
+    •	Users and Bookings: A user can make multiple bookings (as a guest), and each booking is made by one user. This is a one-to-many relationship (one user to many 
+    bookings).
+    •	Properties and Bookings: A property can have multiple bookings, but each booking belongs to one property. This is a one-to-many relationship 
+    (one property to many bookings).
+    •	Properties and Reviews: A property can have multiple reviews, but each review is associated with one property. This is a one-to-many relationship 
+    (one property to many reviews).
+    •	Users and Reviews: A user can write multiple reviews, and each review is written by one user. This is a one-to-many relationship (one user to many reviews).
+    •	Bookings and Payments: Each booking can have one payment, and each payment is associated with one booking. This is a one-to-one relationship 
+    (one booking to one payment).
 
