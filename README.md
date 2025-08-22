@@ -94,3 +94,17 @@ Entity Relationships
     •	Bookings and Payments: Each booking can have one payment, and each payment is associated with one booking. This is a one-to-one relationship 
     (one booking to one payment).
 
+                                        Feature Breakdown
+
+
+User Management: Implements a secure system for user registration, authentication, and profile management, allowing users to create accounts as guests or hosts and manage personal details. This feature ensures secure access control and personalized experiences, building trust and enabling role-based functionality across the platform.
+
+Property Management: Enables hosts to create, update, and retrieve property listings with details like title, description, location, and pricing. It drives the platform’s core business model by allowing hosts to showcase properties and guests to browse them, supported by efficient database queries for scalability.
+
+Booking System: Provides a mechanism for users to reserve properties, check availability, and manage booking details like start and end dates. This feature ensures seamless scheduling and prevents conflicts through database integration, enhancing reliability and user satisfaction.
+
+Payment Processing: Integrates a secure payment system to handle transactions, record details like amount and status, and ensure safe financial exchanges. It builds user confidence through robust API security, contributing to the platform’s credibility and compliance with industry standards.
+
+Review System: Allows users to leave reviews and ratings for properties after their stay, including comments and star ratings. This feature fosters trust and aids guest decision-making, enhancing user engagement and leveraging database relationships for community-driven content.
+
+Data Optimization: Ensures efficient data retrieval and storage through database indexing, query optimization, and caching in MySQL and GraphQL. This feature improves performance and scalability, enabling the platform to handle large datasets and high user traffic effectively.
