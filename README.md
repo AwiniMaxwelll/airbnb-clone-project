@@ -132,3 +132,32 @@ Payment Processing: Integrates a secure payment system to handle transactions, r
 Review System: Allows users to leave reviews and ratings for properties after their stay, including comments and star ratings. This feature fosters trust and aids guest decision-making, enhancing user engagement and leveraging database relationships for community-driven content.
 
 Data Optimization: Ensures efficient data retrieval and storage through database indexing, query optimization, and caching in MySQL and GraphQL. This feature improves performance and scalability, enabling the platform to handle large datasets and high user traffic effectively.
+
+                                    API Security
+
+
+API Security
+
+The Airbnb Clone Project prioritizes API security to protect sensitive data, ensure safe transactions, and maintain user trust. Below are the key security measures implemented and their importance to critical areas of the project.
+
+Key Security Measures
+
+Authentication: Implements JSON Web Tokens (JWT) for secure user authentication, requiring users to provide valid credentials to access protected API endpoints. JWTs are validated on each request to ensure only authenticated users can perform actions like managing profiles or making bookings.
+
+Authorization: Utilizes role-based access control (RBAC) to restrict API access based on user roles (e.g., guest, host). This ensures users can only perform actions aligned with their permissions, such as hosts managing their property listings or guests creating bookings.
+
+Rate Limiting: Enforces rate limits on API endpoints to prevent abuse, such as excessive requests that could lead to denial-of-service (DoS) attacks. This is implemented using Django’s built-in throttling mechanisms and GraphQL rate-limiting libraries to maintain system stability.
+
+Data Encryption: Employs HTTPS for all API communications to encrypt data in transit and stores sensitive information (e.g., passwords) using bcrypt hashing in the database. This protects against interception and unauthorized access to sensitive user data.
+
+Input Validation and Sanitization: Validates and sanitizes all user inputs on API requests to prevent injection attacks (e.g., SQL injection, XSS). This is achieved through Django’s form validation and GraphQL’s input validation mechanisms to ensure data integrity.
+
+Importance of Security for Key Areas
+
+Protecting User Data: Authentication, authorization, and data encryption are critical for safeguarding user information, such as email addresses and password hashes, stored in the Users entity. These measures prevent unauthorized access and data breaches, maintaining user trust and compliance with privacy regulations.
+
+Securing Payments: The Payment Processing feature relies on encryption and secure API endpoints to protect financial transactions and payment details (e.g., amount, payment status). Robust security ensures safe handling of sensitive financial data, reducing the risk of fraud and building confidence in the platform.
+
+Ensuring System Stability: Rate limiting and input validation protect the Booking System and Property Management features from malicious activities like DoS attacks or injection attempts. This ensures the platform remains available and responsive, providing a reliable experience for users managing bookings or listings.
+
+Maintaining Review Integrity: Authorization and input sanitization in the Review System prevent unauthorized users from posting fake reviews or injecting malicious content. This preserves the credibility of user-generated content, which is essential for informed decision-making and community trust.
