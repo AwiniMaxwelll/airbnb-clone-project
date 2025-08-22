@@ -161,3 +161,32 @@ Securing Payments: The Payment Processing feature relies on encryption and secur
 Ensuring System Stability: Rate limiting and input validation protect the Booking System and Property Management features from malicious activities like DoS attacks or injection attempts. This ensures the platform remains available and responsive, providing a reliable experience for users managing bookings or listings.
 
 Maintaining Review Integrity: Authorization and input sanitization in the Review System prevent unauthorized users from posting fake reviews or injecting malicious content. This preserves the credibility of user-generated content, which is essential for informed decision-making and community trust.
+
+                            CI/CD Pipeline
+
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines are automated workflows that streamline the process of building, testing, and deploying code changes. They are critical for the Airbnb Clone Project to ensure rapid, reliable, and error-free delivery of updates, maintaining high-quality code and minimizing deployment risks. By automating repetitive tasks, CI/CD pipelines enhance development efficiency, reduce human error, and support the project’s goal of delivering a scalable and robust booking platform.
+
+
+
+Importance for the Project
+
+Code Quality Assurance: CI pipelines automatically run unit, integration, and end-to-end tests for features like User Management, Property Management, and Booking System whenever code is committed. This ensures that new changes do not introduce bugs or break existing functionality, maintaining a stable platform for users.
+
+Faster Deployments: CD pipelines automate the deployment of tested code to production or staging environments, enabling frequent updates to features like Payment Processing and Review System. This accelerates feature delivery and ensures users have access to the latest improvements without delays.
+
+Consistency and Reliability: Automated pipelines ensure consistent build and deployment processes across environments, reducing configuration errors for critical components like APIs and databases. This supports the project’s scalability by ensuring reliable deployments under high user traffic.
+
+Team Collaboration: CI/CD pipelines facilitate collaborative workflows by providing immediate feedback on code changes, allowing the development team to address issues quickly. This aligns with the project’s use of GitHub for version control and team coordination.
+
+Tools Used
+
+GitHub Actions: Provides a flexible platform for defining CI/CD workflows directly in the GitHub repository. It automates testing (e.g., running Django test suites) and deployment tasks, such as pushing Docker images to a container registry.
+
+Docker: Containerizes the application, ensuring consistent environments across development, testing, and production. Docker simplifies deployment by packaging the Django application, MySQL database, and dependencies into portable containers.
+
+Docker Compose: Manages multi-container setups for local development and testing, ensuring that services like the Django backend, MySQL database, and GraphQL API run seamlessly together during CI/CD processes.
+
+Redis: Supports caching in CI/CD pipelines to optimize test performance for data-heavy features like Property Management and Review System. It reduces database load during automated tests, improving pipeline efficiency.
+
+pytest: Used for running automated test suites within the CI pipeline, covering unit and integration tests for features like User Authentication and Booking System. It ensures comprehensive test coverage and reliable feedback on code quality.
